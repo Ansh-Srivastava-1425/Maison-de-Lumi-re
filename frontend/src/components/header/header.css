@@ -1,0 +1,135 @@
+.food-header-bg-container {
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+
+  min-height: 38vw;
+
+  color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Overlay */
+.food-header-bg-overlay {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+
+  background: linear-gradient(
+    to right,
+    rgba(231, 111, 36, 0.88) 25%,
+    rgba(231, 111, 36, 0.55) 48%,
+    rgba(231, 111, 36, 0.12) 72%,
+    transparent 100%
+  );
+
+  padding: 90px 70px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Text Content */
+.food-header-bg-content {
+  max-width: 620px;
+  z-index: 2;
+}
+
+/* Title */
+.food-header-bg-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+/* Description */
+.food-header-bg-description {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  max-width: 540px;
+  margin-bottom: 32px;
+
+  opacity: 0.92;
+}
+
+/* Button */
+.food-header-bg-button {
+  background: #ffffff;
+  color: #1f2937;
+
+  border: none;
+  outline: none;
+
+  padding: 16px 34px;
+
+  border-radius: 999px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.food-header-bg-button:hover {
+  transform: translateY(-3px);
+  background: #f3f4f6;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .food-header-bg-overlay {
+    padding: 60px 40px;
+  }
+
+  .food-header-bg-title {
+    font-size: 3rem;
+  }
+
+  .food-header-bg-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .food-header-bg-container {
+    min-height: 85vw;
+  }
+
+  .food-header-bg-overlay {
+    padding: 40px 24px;
+
+    background: linear-gradient(
+      to right,
+      rgba(231, 111, 36, 0.9),
+      rgba(231, 111, 36, 0.7)
+    );
+  }
+
+  .food-header-bg-title {
+    font-size: 2.2rem;
+  }
+
+  .food-header-bg-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .food-header-bg-button {
+    padding: 13px 26px;
+    font-size: 0.9rem;
+  }
+}

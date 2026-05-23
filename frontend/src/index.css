@@ -9,6 +9,13 @@
 
 body{
   min-height: 100vh;
+  background: #fff;
+  color: #1f1f1f;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 a{
@@ -16,7 +23,20 @@ a{
   color: inherit;
 }
 
+button,
+input,
+select {
+  font: inherit;
+}
+
 .app{
-  width: 80%;
-  margin: auto;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 0 20px 32px;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding-inline: 16px;
+  }
 }

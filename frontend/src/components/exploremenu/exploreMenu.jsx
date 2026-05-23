@@ -1,8 +1,13 @@
-import React from 'react'
-import './exploreMenu.css'
-import { menu_list } from '../../assets/assets'
+import React from 'react';
+import './exploreMenu.css';
+import { menu_list } from '../../assets/assets';
 
-const ExploreMenu = () => {
+const ExploreMenu = ({ category, setCategory }) => {
+
+  const handleCategoryClick = (name) => {
+    setCategory(prev => (prev === name ? "All" : name));
+  };
+
   return (
     <div className='explore-menu' id='explore-menu'>
 
@@ -14,24 +19,30 @@ const ExploreMenu = () => {
 
       <div className='explore-menu-list'>
 
-        {menu_list.map((item, index) => {
-          return (
-            <div className='explore-menu-list-item' key={index}>
+        {menu_list.map((item, index) => (
+          <div
+            key={index}
+            className='explore-menu-list-item'
+            onClick={() => handleCategoryClick(item.menu_name)}
+          >
 
-              <img src={item.menu_image} alt="" />
+            <img
+              src={item.menu_image}
+              alt={item.menu_name}
+              className={category === item.menu_name ? "active" : ""}
+            />
 
-              <p>{item.menu_name}</p>
+            <p>{item.menu_name}</p>
 
-            </div>
-          )
-        })}
+          </div>
+        ))}
 
       </div>
 
       <hr />
 
     </div>
-  )
-}
+  );
+};
 
-export default ExploreMenu
+export default ExploreMenu;

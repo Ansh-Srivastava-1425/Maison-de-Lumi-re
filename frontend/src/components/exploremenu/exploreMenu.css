@@ -1,63 +1,93 @@
-.explore-menu{
+.explore-menu {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
+    padding-top: 8px;
 }
 
-.explore-menu h1{
+.explore-menu h1 {
     color: #262626;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-.explore-menu-text{
+.explore-menu-text {
     max-width: 60%;
     color: #808080;
+    line-height: 1.7;
 }
 
-.explore-menu-list{
+.explore-menu-list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
     text-align: center;
-    margin: 20px 0px;
-
-    overflow-x: scroll;
+    margin: 12px 0 20px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x proximity;
 }
 
-.explore-menu-list::-webkit-scrollbar{
+.explore-menu-list::-webkit-scrollbar {
     display: none;
 }
 
-.explore-menu-list-item img{
-    width: 7.5vw;
-    min-width: 80px;
+.explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
 
+.explore-menu-list-item img {
+    width: min(16vw, 96px);
+    min-width: 78px;
     cursor: pointer;
     border-radius: 50%;
-
-    transition: 0.2s;
+    transition: all 0.3s ease;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+    display: block;
 }
 
-.explore-menu-list-item p{
+.explore-menu-list-item img.active {
+    border-color: tomato;
+    transform: scale(1.08);
+}
+
+.explore-menu-list-item p {
     margin-top: 10px;
     color: #747474;
-    font-size: max(1.4vw,16px);
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     cursor: pointer;
 }
 
-.explore-menu hr{
+.explore-menu hr {
     margin: 10px 0px;
     height: 2px;
     background-color: #e2e2e2;
     border: none;
 }
 
-@media (max-width: 1050px){
-
-    .explore-menu-text{
+@media (max-width: 1050px) {
+    .explore-menu-text {
         max-width: 100%;
         font-size: 14px;
     }
+}
 
+@media (max-width: 640px) {
+    .explore-menu {
+        gap: 14px;
+    }
+
+    .explore-menu-list {
+        gap: 18px;
+    }
+
+    .explore-menu-list-item img {
+        width: 72px;
+    }
 }

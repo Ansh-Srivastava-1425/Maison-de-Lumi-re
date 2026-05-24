@@ -7,6 +7,8 @@ import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import Cart from './pages/cart/Cart'
 import PlaceOrder from './pages/placeOrder/placeOrder'
+import SignIn from './pages/signIn/signIn'
+import SignUp from './pages/signUp/signUp'
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/place-order' element={<PlaceOrder />} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
       </Routes>
 
       <AppDownload />

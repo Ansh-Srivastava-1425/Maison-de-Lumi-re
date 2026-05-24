@@ -1,3 +1,7 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+
 .navbar {
   padding: 20px 0px;
   display: flex;
@@ -12,6 +16,22 @@
   flex-shrink: 0;
 }
 
+.navbar-logo-btn {
+  border: none;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+/* =========================
+   MENU
+========================= */
+
 .navbar-menu {
   display: flex;
   align-items: center;
@@ -24,6 +44,20 @@
   flex: 1;
 }
 
+.navbar li {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navbar .active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #49557e;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
 .navbar-right {
   display: flex;
   align-items: center;
@@ -32,44 +66,141 @@
   flex-wrap: wrap;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 .navbar button {
   background: transparent;
   font-size: 16px;
   color: #49557e;
-  border: 1px solid tomato;
   padding: 10px 24px;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border: none;
 }
 
 .navbar button:hover {
   background-color: #fff4f2;
 }
 
-.navbar .active {
-  padding-bottom: 2px;
-  border-bottom: 2px solid #49557e;
-}
+/* =========================
+   CART ICON + BADGE
+========================= */
 
-.navbar li {
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.navbar-search-icon{
+.navbar-search-icon {
   position: relative;
+  border: none;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar-search-icon .dot{   
-  position: absolute;
-  min-width: 10px;
-  min-height: 10px;
-  background-color: tomato;
-  border-radius: 5px;
-  top: -8px;
-  right: -8px;
+.navbar-search-icon img {
+  width: 22px;
+  height: 22px;
 }
+
+.navbar-search-icon .dot {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  background-color: tomato;
+  color: white;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* =========================
+   SEARCH BOX (FIXED)
+========================= */
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 50px;
+
+  min-width: 180px;
+}
+
+.search-box img {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  width: 140px;
+  font-size: 14px;
+}
+
+/* focus glow */
+.search-box:focus-within {
+  box-shadow: 0 0 0 2px rgba(73, 85, 126, 0.2);
+}
+
+/* =========================
+   SUGGESTIONS DROPDOWN (FIXED)
+========================= */
+
+.suggestions {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  z-index: 9999;
+  overflow: hidden;
+
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background: #f5f5f5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 900px) {
   .navbar {
@@ -109,4 +240,13 @@
   .navbar button {
     width: 100%;
   }
-}
+
+  .search-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+} 

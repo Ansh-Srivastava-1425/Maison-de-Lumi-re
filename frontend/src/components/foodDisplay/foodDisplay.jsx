@@ -1,16 +1,38 @@
-import React from 'react'
+import React, { useContext, useMemo } from 'react'
 import './foodDisplay.css'
-import { food_list } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
 import FoodItem from '../foodItem/foodItem'
 
 const FoodDisplay = ({ category = 'All' }) => {
-  const filteredItems =
-    category === 'All' || !category
-      ? food_list
-      : food_list.filter((item) => item.category === category)
+
+  const { food_list, searchTerm } = useContext(StoreContext)
+
+  // 🚀 optimized filtering (prevents re-calculation on every render)
+  const filteredItems = useMemo(() => {
+
+    let items = food_list || []
+
+    // 1. category filter
+    if (category !== 'All') {
+      items = items.filter(item => item.category === category)
+    }
+
+    // 2. search filter
+    if (searchTerm?.trim()) {
+      const query = searchTerm.toLowerCase()
+
+      items = items.filter(item =>
+        item.name.toLowerCase().includes(query)
+      )
+    }
+
+    return items
+
+  }, [food_list, category, searchTerm])
 
   return (
-    <section className='food-display'>
+    <section className='food-display' id="explore-menu">
+
       <div className='food-display-header'>
         <div>
           <p className='food-display-tag'>Fresh picks</p>
@@ -30,9 +52,10 @@ const FoodDisplay = ({ category = 'All' }) => {
         </div>
       ) : (
         <div className='food-display-empty'>
-          <p>No dishes available for this category right now.</p>
+          <p>No dishes found 😢</p>
         </div>
       )}
+
     </section>
   )
 }

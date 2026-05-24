@@ -1,4 +1,6 @@
 .food-item {
+  position: relative;
+
   background: #fff;
   border: 1px solid #ececec;
   border-radius: 20px;
@@ -50,10 +52,13 @@
   font-size: 1.1rem;
 }
 
+/* =========================
+   ADD BUTTON
+========================= */
 .food-item-add-btn {
   border: none;
-  background: #f1fff5;
-  color: #1f8f49;
+  background: #1f8f49;
+  color: white;
   border-radius: 999px;
   padding: 10px 14px;
   display: inline-flex;
@@ -74,6 +79,89 @@
   height: 18px;
 }
 
+/* =========================
+   COUNTER (NO SHIFT ISSUE)
+========================= */
+.food-item-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 92px;
+  height: 34px;
+
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 0 6px;
+}
+
+.food-item-counter button {
+  width: 26px;
+  height: 26px;
+
+  border: none;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.food-item-counter span {
+  width: 18px;
+  text-align: center;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* =========================
+   POPUP MESSAGE
+========================= */
+.add-popup {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #1f8f49;
+  color: white;
+
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  z-index: 10;
+  pointer-events: none;
+
+  animation: fadePop 1.2s ease;
+}
+
+@keyframes fadePop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 640px) {
   .food-item-content {
     padding: 16px;

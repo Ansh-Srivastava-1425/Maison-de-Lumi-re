@@ -1,0 +1,111 @@
+.sign-in-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.sign-in-card {
+  width: min(100%, 560px);
+  background: #fff;
+  border: 1px solid #e6e7ee;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(73, 85, 126, 0.12);
+}
+
+.sign-in-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: tomato;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sign-in-card h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #1f1f1f;
+}
+
+.sign-in-card p {
+  color: #49557e;
+  line-height: 1.6;
+}
+
+.sign-in-form {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.sign-in-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.sign-in-form input {
+  border: 1px solid #d7dbea;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sign-in-form input:focus {
+  border-color: tomato;
+  box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.14);
+}
+
+.sign-in-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: tomato;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sign-in-form button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.sign-in-back {
+  display: inline-block;
+  margin-top: 20px;
+  color: #49557e;
+  font-weight: 700;
+}
+
+.sign-in-note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.sign-in-link {
+  color: tomato;
+  font-weight: 700;
+}
+
+.sign-in-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .sign-in-card {
+    padding: 24px 18px;
+  }
+
+  .sign-in-card h1 {
+    font-size: 1.6rem;
+  }
+}

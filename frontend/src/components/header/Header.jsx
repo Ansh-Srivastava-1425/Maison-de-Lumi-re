@@ -5,6 +5,7 @@ import headerBg from '../../assets/header_img.png'
 const Header = () => {
   return (
     <header 
+      id="home"
       className="food-header-bg-container" 
       style={{ backgroundImage: `url(${headerBg})` }}
     >

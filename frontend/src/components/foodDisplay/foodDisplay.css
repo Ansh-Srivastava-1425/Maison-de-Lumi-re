@@ -1,6 +1,14 @@
+/* =========================
+   FOOD DISPLAY
+========================= */
+
 .food-display {
   padding: 30px 0 50px;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 .food-display-header {
   display: flex;
@@ -31,11 +39,34 @@
   line-height: 1.6;
 }
 
+/* =========================
+   GRID (🔥 FIXED)
+========================= */
+
 .food-display-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
+
+  /* justify-items: center;  🔥 KEY FIX */
+  align-items: start;      /* 🔥 prevents stretching */
+
+  transition: all 0.25s ease;
 }
+
+/* =========================
+   FOOD ITEM FIX (IMPORTANT)
+   (works even if not in foodItem.css)
+========================= */
+
+.food-display-grid > * {
+  width: 100%;  
+  max-width: 240px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
 
 .food-display-empty {
   padding: 24px;
@@ -43,7 +74,28 @@
   border-radius: 20px;
   color: #747474;
   text-align: center;
+
+  animation: fadeIn 0.2s ease;
 }
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 768px) {
   .food-display-header {

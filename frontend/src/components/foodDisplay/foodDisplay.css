@@ -4,6 +4,7 @@
 
 .food-display {
   padding: 30px 0 50px;
+  scroll-margin-top: 100px;
 }
 
 /* =========================
@@ -57,7 +58,7 @@
 /* =========================
    FOOD ITEM FIX (IMPORTANT)
    (works even if not in foodItem.css)
-========================= */
+========================= */  
 
 .food-display-grid > * {
   width: 100%;  
@@ -76,6 +77,25 @@
   text-align: center;
 
   animation: fadeIn 0.2s ease;
+}
+
+.show-more-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.show-more-btn{
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.show-more-btn:hover{
+  transform: scale(1.05);
 }
 
 /* =========================

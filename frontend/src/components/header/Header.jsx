@@ -3,13 +3,26 @@ import './header.css';
 import headerBg from '../../assets/header_img.png'
 
 const Header = () => {
+
+  const handleViewMenu = () => {
+
+    document.getElementById("explore-menu")
+      ?.scrollIntoView({
+        behavior: "smooth"
+      })
+
+  }
+
   return (
-    <header 
+
+    <header
       id="home"
-      className="food-header-bg-container" 
+      className="food-header-bg-container"
       style={{ backgroundImage: `url(${headerBg})` }}
     >
+
       <div className="food-header-bg-overlay">
+
         <div className="food-header-bg-content">
 
           <h1 className="food-header-bg-title">
@@ -18,18 +31,25 @@ const Header = () => {
           </h1>
 
           <p className="food-header-bg-description">
-            Choose from a diverse menu featuring a delectable array of dishes crafted with the finest 
+            Choose from a diverse menu featuring a delectable array of dishes crafted with the finest
             ingredients and culinary expertise.
           </p>
 
           <div className="food-header-bg-btn-wrap">
-            <button className="food-header-bg-button">
+
+            <button
+              className="food-header-bg-button"
+              onClick={handleViewMenu}
+            >
               View Menu
             </button>
+
           </div>
 
         </div>
+
       </div>
+
     </header>
   );
 };

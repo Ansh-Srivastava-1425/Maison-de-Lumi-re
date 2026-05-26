@@ -5,7 +5,14 @@ import { menu_list } from '../../assets/assets';
 const ExploreMenu = ({ category, setCategory }) => {
 
   const handleCategoryClick = (name) => {
+
     setCategory(prev => (prev === name ? "All" : name));
+
+    document.getElementById("food-display")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
   };
 
   return (

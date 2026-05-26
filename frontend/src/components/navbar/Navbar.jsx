@@ -17,26 +17,30 @@ const Navbar = () => {
     0
   )
 
-  // 🔍 fuzzy search
-  const fuzzyMatch = (text, query) => {
-    text = text.toLowerCase()
-    query = query.toLowerCase()
+  // // 🔍 fuzzy search
+  // const fuzzyMatch = (text, query) => {
+  //   text = text.toLowerCase()
+  //   query = query.toLowerCase()
 
-    let ti = 0
-    for (let qi = 0; qi < query.length; qi++) {
-      ti = text.indexOf(query[qi], ti)
-      if (ti === -1) return false
-      ti++
-    }
-    return true
-  }
+  //   let ti = 0
+  //   for (let qi = 0; qi < query.length; qi++) {
+  //     ti = text.indexOf(query[qi], ti)
+  //     if (ti === -1) return false
+  //     ti++
+  //   }
+  //   return true
+  // }
 
   // 💡 suggestions
-  const suggestions = searchTerm
-    ? food_list
-        .filter(item => fuzzyMatch(item.name, searchTerm))
-        .slice(0, 5)
-    : []
+  const suggestions = searchTerm.trim()
+  ? food_list
+      .filter(item =>
+        item.name.toLowerCase().includes(
+          searchTerm.trim().toLowerCase()
+        )
+      )
+      .slice(0, 5)
+  : []
 
   // ⏎ Enter → scroll
   const handleSearch = (e) => {

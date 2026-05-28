@@ -21,7 +21,7 @@ const Navbar = () => {
   // const fuzzyMatch = (text, query) => {
   //   text = text.toLowerCase()
   //   query = query.toLowerCase()
-
+  
   //   let ti = 0
   //   for (let qi = 0; qi < query.length; qi++) {
   //     ti = text.indexOf(query[qi], ti)
